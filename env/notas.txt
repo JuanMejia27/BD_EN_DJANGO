@@ -1,0 +1,33 @@
+Creamos el proyecto de python python -m venv env
+Activamos el entorno  env\Scripts\activate
+Instalamos el DJANGO pip install django
+Creamos el projecto django-admin startproject myproject 
+Cambiamos a la ruta del projecto cd/myproject
+Activamos o creamos la app con python manage.py startapp library, agrega la carpeta de library
+
+En la carpeta de myproject vamos al archivo settings.py y en la seccion de instaled_apps agregamos al fina 'library',
+
+Nod vamos a models de library/migrations
+agregamos el codigo en este caso para los datos al libro para el modelo
+
+Realizamos la migracion python manage.py makemigrations, el cual crara el archivo de BD en sqlite
+PAra terminar los cambios python manage.py migrate y activa el archivo de BD con los datos que se definieron
+
+Para ir a DJANGO cambiamos con python manage.py shell para abrir la consola
+Agregamos los datos a subir en la BD en este caso a pie registro a registro, para hacer cambio de renglon es usar tab+enter
+book = Book.objects.create(         
+... title = "Cien años de soledad",     
+... author = "Gabriel", 
+... fecha = "1965-06-05",
+... isbn = "9780060883287",     
+... disponible = True   
+... )    
+print(book)
+books = Book.objects.all()
+
+garcia_books = Book.objects.filter(author = "Gabriel")
+print(garcia_books)
+
+book.disponible = False
+book.save()
+book.delete()
