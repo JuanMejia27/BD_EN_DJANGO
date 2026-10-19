@@ -31,3 +31,10 @@ print(garcia_books)
 book.disponible = False
 book.save()
 book.delete()
+
+agrgamos los archivos de
+carpeta templates y archivo index.html
+agregamos en settings.py [BASE_DIR / 'templates'] en la parte de templates
+En index se agrega el codigo base del html
+se crea el archivo urls en la carpeta migrations y sobre ese el codigo
+y corremos el server python manage.py runserver
