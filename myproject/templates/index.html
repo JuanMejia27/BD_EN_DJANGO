@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+</head>
+<style>
+    .th{
+        color: black;
+    }
+</style>
+<body>
+    <!--<h1>!Bienvenido, {{name}}!!</h1>
+    <p>Hoy es {{date}}</p>
+    <h2> Tareas para hoy:</h2>
+    <ul>
+        {% for task in tasks%}
+            <li>{{ task }}</li>
+        {% empty %}
+        <p>No tines tareas pendientes</p>
+        {% endfor %}
+    </ul>-->
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Fecha de registro</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{user.name}}</td>
+                    <td>{{user.correo}}</td>
+                    <td>{{user.joined}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
